@@ -22,7 +22,7 @@ found_pids=()
 timestamp=$(date '+%Y-%m-%d %H:%M:%S')
 
 # Initialize CSV
-echo "Timestamp,User,PID,CPU_Percent,Memory_Percent,Duration,Short_Command,Full_Command" > "$CSV_FILE"
+echo "Timestamp,User,PID,CPU_Percent,Memory_Percent,Duration,Short_Command" > "$CSV_FILE"
 
 # Process monitoring loop
 while read -r user pid pcpu pmem etime comm args; do
@@ -39,7 +39,7 @@ while read -r user pid pcpu pmem etime comm args; do
         
         # Log and CSV output
         echo "$timestamp - Python Process PID $pid (User: $user, CPU: $pcpu%, MEM: $pmem%, Duration: $etime, Cmd: $comm)" >> "$LOG_FILE"
-        echo "$(escape_csv "$timestamp"),$(escape_csv "$user"),$(escape_csv "$pid"),$(escape_csv "$pcpu"),$(escape_csv "$pmem"),$(escape_csv "$etime"),$(escape_csv "$comm"),$(escape_csv "$clean_cmd")" >> "$CSV_FILE"
+        echo "$(escape_csv "$timestamp"),$(escape_csv "$user"),$(escape_csv "$pid"),$(escape_csv "$pcpu"),$(escape_csv "$pmem"),$(escape_csv "$etime"),$(escape_csv "$comm")" >> "$CSV_FILE"
         
         found_pids+=("$pid")
         echo "Detected Python PID: $pid"
