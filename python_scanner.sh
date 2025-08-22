@@ -2,8 +2,8 @@
 # Secure Login Node Python Process Monitor
 
 
-LOG_FILE="/scratch/admins/uttej/login-monitor/ProcessLog_$(date '+%y-%m-%d').log"
-CSV_FILE="/scratch/admins/uttej/login-monitor/ProcessCSV_$(date '+%y-%m-%d').csv"
+LOG_FILE="/scratch/admins/uttej/login-monitor/logs/ProcessLog_$(date '+%y-%m-%d').log"
+CSV_FILE="/scratch/admins/uttej/login-monitor/logs/ProcessCSV_$(date '+%y-%m-%d').csv"
 WHITELIST_USERS=("root" "slurm" "admin")
 WHITELIST_PROCS=("bash" "zsh" "sshd" "vim" "nano" "squeue" "sinfo" "code-server" "slurmd" "agetty" "systemd")
 
