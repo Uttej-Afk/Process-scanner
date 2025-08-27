@@ -5,7 +5,7 @@
 LOG_FILE="/scratch/admins/uttej/login-monitor/logs/ProcessLog_$(date '+%y-%m-%d').log"
 CSV_FILE="/scratch/admins/uttej/login-monitor/logs/ProcessCSV_$(date '+%y-%m-%d').csv"
 WHITELIST_USERS=("root" "slurm" "admin")
-WHITELIST_PROCS=("bash" "zsh" "sshd" "vim" "nano" "squeue" "sinfo" "code-server" "slurmd" "agetty" "systemd")
+WHITELIST_PROCS=("bash" "zsh" "sshd" "vim" "nano" "squeue" "sinfo" "slurmd" "agetty" "systemd")
 
 # Check write permissions
 touch "$LOG_FILE" "$CSV_FILE" 2>/dev/null || { echo "Error: Cannot write to log files" >&2; exit 1; }
